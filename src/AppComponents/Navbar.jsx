@@ -35,6 +35,15 @@ export default function Navbar ({ mode, title }) {
                                 </Link>
                         }
                         {
+                            location.pathname === '/food'
+                                ? <Link to="/food" className={ `text-base font-medium bg-${ mode }-700 text-white px-3 py-2 rounded-md text-sm font-medium` }>
+                                    Food
+                                </Link>
+                                : <Link to="/food" className={ `text-base font-medium text-${ mode }-500 hover:bg-${ mode }-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium` }>
+                                    Food
+                                </Link>
+                        }
+                        {
                             location.pathname === '/about'
                                 ? <Link to="/about" className={ `text-base font-medium bg-${ mode }-700 text-white px-3 py-2 rounded-md text-sm font-medium` }>
                                     About
@@ -91,6 +100,15 @@ export default function Navbar ({ mode, title }) {
                                         </Link>
                                         : <Link to="/" className={ `text-base font-medium text-${ mode }-500 hover:bg-${ mode }-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium` }>
                                             Home
+                                        </Link>
+                                }
+                                {
+                                    location.pathname === '/food'
+                                        ? <Link to="/food" className={ `text-base font-medium bg-${ mode }-700 text-white px-3 py-2 rounded-md text-sm font-medium` }>
+                                            Food
+                                        </Link>
+                                        : <Link to="/food" className={ `text-base font-medium text-${ mode }-500 hover:bg-${ mode }-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium` }>
+                                            Food
                                         </Link>
                                 }
                                 {

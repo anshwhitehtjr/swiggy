@@ -8,12 +8,12 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
+import Food from "./Components/Food";
 
 function App () {
   const [alert, setAlert] = useState(null);
-  const mode = 'indigo';
+  const mode = 'blue';
 
   const showAlert = (message, type) => {
     setAlert({
@@ -22,16 +22,19 @@ function App () {
     });
     setTimeout(() => {
       setAlert(null);
-    }, 1500);
+    }, 5000);
   };
 
   return (
     <Router>
-      <Navbar mode={ mode } title='Demo Title' />
+      <Navbar mode={ mode } title='Swiggy' />
       <Alert alert={ alert } />
       <Switch>
         <Route exact path='/'>
           <Home showAlert={ showAlert } />
+        </Route>
+        <Route exact path='/food'>
+          <Food showAlert={ showAlert } />
         </Route>
         <Route exact path='/about'>
           <About showAlert={ showAlert } />
